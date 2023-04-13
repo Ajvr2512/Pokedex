@@ -1,11 +1,8 @@
 import React from 'react';
 function App() {
-  
-
   return (
     <>
-     <h1>Hola</h1>
-           
+     <h1>Hola</h1>        
     </>
   );
 }
