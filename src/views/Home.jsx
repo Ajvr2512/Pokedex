@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext';
 
 const Home = () => {
   const [nameValue, setNameValue] = useState('');
   const [nameError, setNameError] = useState(null);
-  const [user, setUser] = useState(useContext);
+  const { user, setUser } = useContext(UserContext);
 
   const handleChange = (e) => {
     const newNameValue = e.target.value;
@@ -16,7 +17,9 @@ const Home = () => {
   };
   const hanleSubmit = (e) => {
     e.preventDefault();
-    if (!nameError) setUser(nameValue);
+    if (!nameError) {
+      setUser(nameValue);
+    }
   };
 
   return (
@@ -44,6 +47,7 @@ const Home = () => {
         </button>
       </form>
       {nameError && <p className="text-red-500 text-center">{nameError}</p>}
+      {user && <Navigate to="/pokedex" />}
     </div>
   );
 };
