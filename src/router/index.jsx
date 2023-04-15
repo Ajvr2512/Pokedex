@@ -1,9 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Pokedex from './views/Pokedex';
-import PokedexGeneral from './Components/PokedexGeneral';
-import Pokemon from './views/Pokemon';
-import Home from './views/Home';
-import ProtectedRoute from './Components/ProtectedRoute';
+import Pokedex from '../views/Pokedex';
+import PokedexGeneral from '../Components/PokedexGeneral';
+import Pokemon from '../views/Pokemon';
+import Home from '../views/Home';
+import ProtectedRoute from '../Components/ProtectedRoute';
+import { pokedexLoader } from './loader/pokedexLoader';
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Pokedex />,
+        loader: pokedexLoader,
       },
     ],
   },

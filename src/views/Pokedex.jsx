@@ -1,29 +1,25 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
-import axios from 'axios';
 import PokemonCard from '../Components/PokemonCard';
 import { usePagination } from '../hooks/usePagination';
+import { Form } from 'react-router-dom';
 
-const getAllPokemos = async () => {
-  try {
-    const res = await axios.get('https://pokeapi.co/api/v2/pokemon/?limit=30');
-    return res.data.results;
-  } catch (error) {
-    console.error(error);
-  }
-};
 const Pokedex = () => {
   const { user } = useContext(UserContext);
-  const [pokemons, setPokemon] = useState([]);
+  const [pokeName, setPokeName] = useState('');
+  const [pokeType, setPokeType] = useState('');
+  const { pokemons, types } = useLoaderData();
   const pokemonsPagination = usePagination(pokemons, 10);
-
-  const loadAllPokemons = async () => {
-    const allPokemos = await getAllPokemos();
-    setPokemon(allPokemos);
+  const hanleNameChange = (e) => {
+    setPokeName(e.target.value);
+    setPokeType('');
   };
-  useEffect(() => {
-    loadAllPokemons();
-  }, []);
+  const hanleTypeChange = (e) => {
+    setPokeType(e.target.value);
+    setPokeName('');
+  };
+
   return (
     <div className="w-full p-5">
       <p>
@@ -40,6 +36,35 @@ const Pokedex = () => {
             {page}
           </button>
         ))}
+      </div>
+      <div>
+        <Form>
+          <div className="flex felx-row justify-between">
+            <h3 className="text-red-500">Filter for search</h3>
+            <div>
+              <input
+                type="text"
+                name="pokemon_name"
+                className="shadow-md border border-black"
+                value={pokeName}
+                onChange={hanleNameChange}
+              />
+              <select name="pokemon_type" value={pokeType} onChange={hanleTypeChange}>
+                <option value="" disabled>
+                  --Chose a type--
+                </option>
+                {types.map((type) => (
+                  <option key={type.url} value={type.name}>
+                    {type.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <button className="bg-red-500 text-white p-2 hover:bg-red-400 rounded">
+              Search
+            </button>
+          </div>
+        </Form>
       </div>
       <section>
         {pokemonsPagination.listSlice.map((pokemon) => (
