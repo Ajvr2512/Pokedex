@@ -23,31 +23,33 @@ const Home = () => {
   };
 
   return (
-    <div className="m-20">
-      <div className="flex justify-center items-center mg-15">
-        <img src="/image1.png" alt="Pokedex" />
+    <div className="Home">
+      <div className=" m-20">
+        <div className="flex justify-center items-center mg-15">
+          <img src="/image1.png" alt="Pokedex" />
+        </div>
+        <div className="TextHome text-center m-10">
+          <h1 className=" text-red-500 text-4xl font-bold">¡Hello Trainer!</h1>
+          <p>Type your name to start</p>
+        </div>
+        <form
+          className="FormHome flex flex-row justify-center items-center mt-8 gap-3"
+          onSubmit={hanleSubmit}
+        >
+          <input
+            type="text"
+            value={nameValue}
+            placeholder="Type your name"
+            className="shadow-md border border-black p-3"
+            onChange={handleChange}
+          />
+          <button type="submit" className="bg-red-500 text-white font-bold p-3">
+            Start
+          </button>
+        </form>
+        {nameError && <p className="text-red-500 text-center">{nameError}</p>}
+        {user && <Navigate to="/pokedex" />}
       </div>
-      <div className="text-center m-10">
-        <h1 className="text-red-500 text-4xl font-bold">¡Hello Trainer!</h1>
-        <p>Type your name to start</p>
-      </div>
-      <form
-        className="flex flex-row justify-center items-center mt-8 gap-3"
-        onSubmit={hanleSubmit}
-      >
-        <input
-          type="text"
-          value={nameValue}
-          placeholder="Type your name"
-          className="shadow-md border border-black p-3"
-          onChange={handleChange}
-        />
-        <button type="submit" className="bg-red-500 text-white font-bold p-3">
-          Start
-        </button>
-      </form>
-      {nameError && <p className="text-red-500 text-center">{nameError}</p>}
-      {user && <Navigate to="/pokedex" />}
     </div>
   );
 };

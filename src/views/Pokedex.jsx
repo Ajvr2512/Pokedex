@@ -22,7 +22,7 @@ const Pokedex = () => {
   };
 
   return (
-    <div className="w-full p-5">
+    <div className="TextBien w-full p-5">
       <p className=" text-center text-2xl">
         <span className="text-red-500 font-semibold">Bienvenido {user}, </span>
         aqui encontraras tu pokemon favorito
@@ -63,7 +63,7 @@ const Pokedex = () => {
       </Form>
       <div className="ContainerButton">
         <button className="ButtonPreNext" onClick={pokemonsPagination.previousPage}>Previous </button>
-        {pokemonsPagination.totalPages > 20
+        {pokemonsPagination.totalPages > 10
           ? ''
           : pokemonsPagination.pages.map((page) => (
               <button

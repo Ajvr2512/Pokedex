@@ -21,17 +21,19 @@ const Pokemon = () => {
     loadPokemon();
   }, []);
   return (
-    <div>
+    <div className="InfoPokeDel">
       {poke && (
         <div>
-          <div className="imgeDet">
-            <img src={poke.sprites.other.home.front_default} alt={poke.name} />
+          <div className="ImgNamePoke">
+            <div className="imgeDet">
+              <img src={poke.sprites.other.home.front_default} alt={poke.name} />
+            </div>
+            <section className="namePokedel">
+              <h2>{poke.name}</h2>
+              <p>#{id}</p>
+            </section>
           </div>
-          <section className="namePokedel">
-            <h2>{poke.name}</h2>
-            <p>#{id}</p>
-          </section>
-          <div>
+          <div className="PokeWei">
             <section>
               <h3>Weight</h3>
               <p>{poke.weight}</p>
@@ -40,13 +42,13 @@ const Pokemon = () => {
               <h3>Height</h3>
               <p>{poke.height}</p>
             </section>
-          </div>
-          <div>
             <section>
               <h3>TYPE</h3>
-              <p>{poke.types.name}</p>
+              <p>{poke.types[0].type.name}</p>
             </section>
-            <section>
+          </div>
+          <div className="ListInfoPoke">
+            <section className="InfoPokeList">
               {poke.stats.map((stat) => (
                 <section className="ListInfoPke" key={stat.stat.name}>
                   <h3>{stat.stat.name.toUpperCase()}</h3>
