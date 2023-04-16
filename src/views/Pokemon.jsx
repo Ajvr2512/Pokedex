@@ -24,10 +24,10 @@ const Pokemon = () => {
     <div>
       {poke && (
         <div>
-          <div>
+          <div className="imgeDet">
             <img src={poke.sprites.other.home.front_default} alt={poke.name} />
           </div>
-          <section>
+          <section className="namePokedel">
             <h2>{poke.name}</h2>
             <p>#{id}</p>
           </section>
