@@ -4,3 +4,182 @@
 .root{
 font-family: 'Roboto', sans-serif;
 }
+/*PokedexGeneral*/
+.Img_general{
+width:100%;
+}
+/*Pokedex*/
+.PokeCard{
+display:grid;
+gap:rem;
+grid-template-columns:repeat(auto-fill, minmax(190px, 1fr));
+grid-template-rows:auto;
+justify-item:center;
+margin-left:15%;
+margin-right:15%;
+}
+.searchText{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+margin-left:16%;
+border:solid 1px;
+width:64%;
+padding:15px;
+}
+.searchText h3{
+font-size:15px;
+font-weight: bold;
+}
+.ContainerButton{
+margin: 25px;
+  display:flex;
+  justify-content:center;
+  font-size:10px;
+  gap:10px;
+  margin-right:40%;
+}
+.ButtonPreNext{
+  width:10%;
+  background:  #222224;
+  border-radius:4.5px;
+  color:white;
+}
+.buttonPage{
+  width: 15px;
+  aspect-ratio:3;
+  display:flex;
+  justify-content: center;
+  align-item:center;
+  font-weight: bold;
+  color:white;
+  background: #222224;
+  border-radius:50%;
+}
+.ButtonAct,
+.buttonPage:hover{
+  color:#062226;
+  background: #7E7E7E;
+  cursor:pointer;
+}
+/*CardPokemon*/
+.CardPoke{
+max-height:95%;
+max-width:70%;
+margin-left:10px;
+border: 5px solid;
+margin-bottom: 15px;
+background: linear-gradient(
+    #ee1515 20%,
+    #f00000 20%,
+    #222224 35%,
+    #f0f0f0 75%,
+    #f0f0f0 80%
+  );
+}
+.InfoPoke{
+font-size: 13px;
+text-align:center;
+}
+.PokeInfo1{
+display:flex;
+flex-direction:row;
+gap: 72px;
+justify-content:center;
+}
+.PokeInfo2{
+display:flex;
+flex-direction:row;
+gap: 32px;
+justify-content:center;
+text-align:center;
+}
+.PokeInfo1 h3, .PokeInfo2 h3{
+font-size:15px;
+font-weight: bold;
+text-align:center;
+}
+.PokeInfo1 p, .PokeInfo2 p{
+font-size:14px;
+text-align:center;
+color:#f00000;
+font-weight: bold;
+}
+.ListInfoPke h3{
+display:flex;
+flex-direction:column;
+}
+.InfoPoke h2{
+font-size: 22px;
+font-weight: bold;
+}
+.imgPke{
+width:70%;
+}
+
+/*Loader*/
+.ball {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  box-shadow: -20px 0 rgba(0, 0, 0, 0.1) inset;
+  animation: roll 1s ease-in-out infinite;
+  background: linear-gradient(
+    to bottom,
+    #e83e35 0%,
+    #e83e35 50.5%,
+    #ffffff 50.51%,
+    #ffffff 100%
+  );
+}
+
+.ball:after {
+  content: "";
+  position: absolute;
+  top: calc(100px - 3px);
+  left: 0;
+  width: 200px;
+  height: 6px;
+  background: #3f3f3f;
+}
+
+.ball:before {
+  content: "";
+  position: absolute;
+  top: 67px;
+  left: 67px;
+  width: 54px;
+  height: 54px;
+  border: solid 6px #3f3f3f;
+  border-radius: 50%;
+  background: white;
+  z-index: 1;
+  box-shadow: 0 0 15px -2px #c62828 inset;
+  animation: button 3s ease infinite;
+}
+
+@-webkit-keyframes roll {
+  from {
+    transform: rotate(0);
+  }
+  90%,
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@-webkit-keyframes button {
+  from,
+  50%,
+  to {
+    box-shadow: 0 0 15px -2px #c62828 inset;
+  }
+
+  25%,
+  75% {
+    box-shadow: 0 0 10px -2px #1300ea inset;
+  }
+}

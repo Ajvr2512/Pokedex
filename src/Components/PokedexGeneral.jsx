@@ -4,8 +4,10 @@ import { Outlet } from 'react-router';
 const PokedexGeneral = () => {
   return (
     <div>
-      <h1> PokedexGeneral </h1>
-      <Outlet />
+      <img src="/image2.png" alt="imgGneral" className="Img_general"/>
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 };
