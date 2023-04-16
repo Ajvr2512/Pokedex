@@ -116,6 +116,21 @@ font-weight: bold;
 }
 .imgPke{
 width:70%;
+
+}
+/*Pokemon*/
+.imgeDet{
+padding:5%;
+width:70%;
+}
+.imgeDet img{
+width:50%;
+}
+.namePokedel h2{
+font-size:25px;
+font-weight: bold;
+text-align:center;
+background: 
 }
 
 /*Loader*/
