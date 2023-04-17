@@ -26,7 +26,7 @@ const Pokemon = () => {
         <div>
           <div className="ImgNamePoke">
             <div className="imgeDet">
-              <img src={poke.sprites.other.home.front_default} alt={poke.name} />
+              <img src={poke.sprites.other['official-artwork'].front_default} alt={poke.name} />
             </div>
             <section className="namePokedel">
               <h2>{poke.name}</h2>
