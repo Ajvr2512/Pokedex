@@ -163,6 +163,7 @@ font-weight: bold;
   margin-left:15%;
  }
 .InfoPokeDel{
+  border: 5px solid;
   background: linear-gradient(
     #ee1515 20%,
     #f00000 20%,
@@ -199,7 +200,8 @@ font-size: 25px;
 .ListInfoPoke{
   padding:12px;
   margin: 0 auto;
-  width:100%;
+  margin-bottom:5%;
+  width:85%;
   background:#f0f0f0;
   display:flex;
   flex-direction:column;
@@ -214,6 +216,7 @@ font-size: 25px;
   margin-right:15%;
 }
 .ListInfoPke h3{
+  text-align:center;
 border:solid #8a9597;
 width:80px;
 font-weight: bold;
@@ -291,19 +294,21 @@ font-weight: bold;
     box-shadow: 0 0 10px -2px #1300ea inset;
   }
 }
+/**/
 
-@media (max-width: 415px){
-  .TextHome h1{
-font-size:15px;
-  }
-  .TextHome p{
-    font-size:12px;
-      }
-  .FormHome{
-    font-size:10px;
-  }
-}
 @media (max-width: 995px){
+  .InfoPokeList{
+    grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));
+      }
+  .ListInfoPke h3{
+  width:60px;
+  font-size:12px;
+  
+  }
+  .ListInfoPke p{
+    width:60px;
+    font-size:12px;
+    }
   .ButtonPreNext{
     width:20%;
   }
@@ -329,30 +334,8 @@ font-size:15px;
   }
 
 }
-@media (max-width:533px){
-  .searchText input,
-  .searchText select,
-  .searchText button{
-    font-size:10px;
-  }
-  .TextBien p{
-    font-size:15px;
-  }
-  .buttonPage{
-    gap:5px;
-  }
-}
-@media (max-width:421px){
-  .searchText{
-    width:75%;
-  }
-  .searchText h3{
-    font-size:12px;
-    }
-    .ContainerButton{
-      gap:5px;
-    }
-}
+
+
 @media (max-width:841px){
   .imgeDet{
     width:40%;
@@ -387,7 +370,17 @@ font-size:15px;
       font-size:15px;
       } 
 }
-@media (max-width:595px){
+
+@media (max-width:600px){
+  .InfoPokeList{
+    grid-template-columns:repeat(auto-fill, minmax(30px, 1fr));
+      }
+  .ListInfoPke h3,
+  .ListInfoPke p{
+  width:50px;
+  font-size:10px;
+  
+  }
   .imgeDet{
     width:30%;
   }
@@ -407,14 +400,45 @@ font-size:15px;
       font-size: 18px;
       }
     
-    .InfoPokeList{
-      grid-template-columns:repeat(auto-fill, minmax(70px, 1fr));
-    }
-    .ListInfoPke h3{
-      font-size:13px;
-    }
-    .ListInfoPke p{
-     font-size:13px;
+}
+@media (max-width:533px){
+  .searchText input,
+  .searchText select,
+  .searchText button{
+    font-size:10px;
+  }
+  .TextBien p{
+    font-size:15px;
+  }
+  .buttonPage{
+    gap:5px;
+  }
+}
+@media (max-width:415px){
+  .TextHome h1{
+font-size:15px;
+  }
+  .TextHome p{
+    font-size:12px;
       }
+  .FormHome{
+    font-size:10px;
+  }
+  .searchText{
+    width:75%;
+  }
+  .searchText h3{
+    font-size:12px;
+    }
+    .ContainerButton{
+      gap:5px;
+    }
+  .namePokedel h2{
+    font-size:15px;
+  }
+  .PokeWei h3,
+  .PokeWei p{
+    font-size:15px;
+  }
 }
 
