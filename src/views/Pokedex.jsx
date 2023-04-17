@@ -21,11 +21,13 @@ const Pokedex = () => {
     setPokeName('');
   };
 
+ 
+
   return (
     <div className="TextBien w-full p-5">
       <p className=" text-center text-2xl">
-        <span className="text-red-500 font-semibold">Bienvenido {user}, </span>
-        aqui encontraras tu pokemon favorito
+        <span className="text-red-500 font-semibold"> Welcome {user}, </span>
+        here you will find your favorite pokemon
       </p>
       <Form>
         <div className="searchText">
