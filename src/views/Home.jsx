@@ -48,7 +48,7 @@ const Home = () => {
           </button>
         </form>
         {nameError && <p className="text-red-500 text-center">{nameError}</p>}
-        {user && <Navigate to="/pokedex" />}
+        {user && <Navigate to="/pokedex" replace />}
       </div>
     </div>
   );
