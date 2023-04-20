@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Loader from './Loader';
+import {pokemonColors} from '../services/pokemonColors';
 const getPokemonById = async (url) => {
   try {
     const res = await axios.get(url);
@@ -28,7 +29,7 @@ const PokemonCard = ({ pokemonData }) => {
   return (
     <div>
       {poke ? (
-        <article onClick={handleClickNavigate} className=" CardPoke hover:cursor-pointer">
+        <article onClick={handleClickNavigate} className={`CardPoke ${pokemonColors[poke.types[0].type.name]}hover:cursor-pointer`}>
           <header>
             <div className="imgPke">
               <img src={poke.sprites.other.home.front_default} alt={poke.name} />
@@ -38,7 +39,7 @@ const PokemonCard = ({ pokemonData }) => {
           <div>
             <section className="InfoPoke">
               <h2>{poke.name}</h2>
-              <p>{poke.types[0].type.name}</p>
+              <p className="InfoPokeP">{poke.types[0].type.name}</p>
               <p>Tipo</p>
             </section>
             <div>

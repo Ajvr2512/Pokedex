@@ -88,18 +88,18 @@ max-width:85%;
 margin-left:10px;
 border: 5px solid;
 margin-bottom: 15px;
-background: linear-gradient(
-    #ee1515 20%,
-    #f00000 20%,
-    #222224 35%,
-    #f0f0f0 75%,
-    #f0f0f0 80%
-  );
 }
 .InfoPoke{
 font-size: 13px;
 text-align:center;
 }
+.InfoPokeP{
+margin:0 auto;
+width: 35%;
+  border-radius:4.5px;
+  background:black;
+  color:white;
+  }
 .PokeInfo1{
 display:flex;
 flex-direction:row;
